@@ -1,1 +1,30 @@
-Hey this is the home page!
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>  
+        <script type="text/javascript" src="{% static 'js/bower_components/angular/angular.min.js' %}"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-resource.js"></script>
+        
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/services.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/controllers.js' %}"></script>
+
+        
+    </head>
+
+    <body ng-app="thingApp">
+        <div ng-controller="ThingCtrl" >
+            <h1>Thing List</h1>
+            <ul>
+                <li ng-repeat="thing in things">
+                    Thing: {[{ thing.title }]}, {[{ thing.name }]}
+                </li>
+            </ul>
+            <pre>{[{ things | json }]}</pre>
+        </div>
+    </body> 
+
+
+
+</html>
+
