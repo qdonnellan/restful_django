@@ -17,9 +17,10 @@
             <h1>Thing List</h1>
             <form>
                 <input type="text" placeholder="type the title" ng-model="thing.title">
+                <strong ng-bind="errors.title"></strong>
                 <input type="text" placeholder="body" ng-model="thing.body">
+                <strong ng-bind="errors.body"></strong>
                 <button type="submit" ng-click="saveThing()">submit</button>
-
             </form>
             <ul>
                 <li ng-repeat="thing in things">
