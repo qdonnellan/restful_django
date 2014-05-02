@@ -5,9 +5,9 @@ thingAppControllers.controller('ThingCtrl', ['$scope', 'Thing',
         $scope.things = Thing.query();
 
         $scope.saveThing = function() {
-            Thing.save($scope.thing, function() {
+            Thing.save($scope.thing, function(data) {
                 // a successful post!
-                $scope.things = Thing.query();
+                $scope.things.push(data);
             }, function(error) {
                 // an unsuccessful post, womp womp
                 $scope.errors = error.data;
