@@ -10,7 +10,7 @@ thingAppControllers.controller('ThingCtrl', ['$scope', 'Thing',
                 $scope.things = Thing.query();
             }, function(error) {
                 // an unsuccessful post, womp womp
-                alert('you broke it!');
+                $scope.errors = error.data;
             });
         };
     }
